@@ -120,7 +120,7 @@ func play(filename string) (err error) {
 		for {
 			os.Stdin.Read(b)
 			if b[0] == 'n' {
-				stream.Seek(0, io.SeekEnd)
+				stream.SeekSample(int64(stream.Info.NSamples))
 				quit <- true
 				return
 			}
