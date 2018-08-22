@@ -23,7 +23,7 @@ before_script:
   - chmod +x ci_checks.sh
 
 script:
-  - export GOLANGCI_LINT_DISABLE_CHECKS='--disable maligned,lll,dupl --exclude "(G501:|G401:|Error return value of .md5sum\.Write. is not checked)"'
+  - export GOLANGCI_LINT_DISABLE_CHECKS="--disable maligned,lll,dupl --exclude \"(G501:|G401:|Error return value of .md5sum\.Write. is not checked)\""
   - ./ci_checks.sh
 
 # skip G501: Import blacklist: crypto/md5
